@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <script>
+    // GitHub Pages SPA redirect trick.
+    // When GitHub serves this 404.html for any unknown path,
+    // we encode the path into the query string and redirect to index.html.
+    // The index.html then reads the query param and restores the URL via history.replaceState.
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 2).join('/') + // keep the /repo-name prefix
+      '/?p=' + encodeURIComponent(
+        l.pathname.split('/').slice(2).join('/') + // path after /repo-name/
+        (l.search ? l.search : '') +
+        (l.hash ? l.hash : '')
+      )
+    );
+  </script>
+</head>
+<body></body>
+</html>
