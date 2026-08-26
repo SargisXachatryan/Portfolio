@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --bg: #0e0d0b;
+  --surface: #161510;
+  --surface2: #1e1c17;
+  --border: rgba(255,255,255,0.07);
+  --text: #c8c2b4;
+  --text-dim: #6b6659;
+  --heading: #f5f0e8;
+  --accent: #d4a843;
+  --accent-dim: rgba(212,168,67,0.12);
+  --accent-border: rgba(212,168,67,0.35);
+  --radius: 8px;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-body: 'Lora', serif;
+  --navbar-h: 60px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Hide scrollbar everywhere */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar { display: none; }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}

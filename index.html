@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV & Portfolio</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <!-- ============================================================
+  GitHub Pages SPA fix — paste this script into the <head> of
+  your  public/index.html  BEFORE any other scripts.
+  Works together with 404.html which redirects unknown paths
+  back to index with ?p=<encoded-path>.
+  ============================================================ -->
+  <script>
+    (function () {
+      var query = window.location.search;
+      if (query.startsWith('?p=')) {
+        var restored = decodeURIComponent(query.slice(3));
+        // Restore the real URL without triggering a page reload
+        window.history.replaceState(
+          null, null,
+          window.location.pathname.split('/').slice(0, 2).join('/') +
+          '/' + restored
+        );
+      }
+    })();
+  </script>
+</body>
+
+</html>

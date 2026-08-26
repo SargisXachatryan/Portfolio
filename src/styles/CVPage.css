@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════════════════════════
+   CVPage — large centered inline PDF viewer
+   ═══════════════════════════════════════════════════════════════ */
+
+.cv-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - var(--navbar-h));
+  padding: 48px 40px 80px;
+}
+
+.cv-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.cv-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cv-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--heading);
+}
+
+/* ── Viewer ── */
+.cv-viewer-wrap {
+  width: 100%;
+  flex: 1;
+  min-height: 70vh;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.cv-viewer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 70vh;
+  border: none;
+}
+
+/* ── Download button — same treatment as ProjectPage's .pp-cta ── */
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--heading);
+  text-decoration: none;
+  padding: 11px 26px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.cv-download:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.cv-download-arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.cv-download:hover .cv-download-arrow {
+  transform: translateY(2px);
+}
+
+.cv-fallback-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin-top: -12px;
+}
+
+.cv-fallback-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.cv-fallback-note a:hover {
+  text-decoration: underline;
+}
+
+/* Kept in case anything else still references it */
+.cv-placeholder {
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cv-page {
+    padding: 28px 16px 48px;
+  }
+
+  .cv-viewer-wrap,
+  .cv-viewer {
+    min-height: 60vh;
+  }
+}
