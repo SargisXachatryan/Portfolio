@@ -61,7 +61,6 @@ export default function PortfolioPage() {
           <div className="contact-header">
             <span className="contact-eyebrow">Get in touch</span>
             <h2 className="contact-title">Let's work together</h2>
-            <p className="contact-sub">Open to freelance, full-time, and collaboration opportunities.</p>
           </div>
 
           <div className="contact-cards">
