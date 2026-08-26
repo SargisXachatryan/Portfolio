@@ -12,17 +12,17 @@
       "Node.js"
     ],
     "year": 2026,
-    "image": "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Thumbnail.jpg",
     "details": "Easy Chat was built from scratch as a full-stack project to explore real-time communication on the web. The goal was simple: a clean, fast messenger that requires zero installation and works across all modern browsers.\n\nThe frontend is built with React and TypeScript, using a component-driven architecture to keep the UI modular and maintainable. State is managed locally with React hooks, keeping things lightweight without needing a heavy state library.\n\nOn the backend, Node.js powers a WebSocket server that handles real-time message delivery with near-zero latency. User sessions and chat history are persisted in a SQL database, giving users access to their conversation history across devices.\n\nThe biggest challenge was handling connection drops gracefully — the app automatically attempts reconnection with exponential backoff, so brief network hiccups don't interrupt conversations. Message delivery confirmation (read receipts) was also a fun problem to solve at the protocol level.\n\nOverall the project was a deep dive into WebSocket architecture, real-time state synchronization, and building a full authentication flow with JWTs from the ground up.",
     "link": "https://sargisx.github.io/Easy-Chat",
-    "video": "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Video.mp4",
+    "video": "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Video.mp4",
     "gallery": [
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img1.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img2.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img3.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img4.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img5.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/1_EasyChat_Img6.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/1_EasyChat_Img6.jpg"
     ]
   },
   {
@@ -35,16 +35,16 @@
       "Davinci Resolve"
     ],
     "year": 2025,
-    "image": "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Thumbnail.jpg",
     "details": "Easy Park started as a response to a genuinely frustrating daily experience — being blocked in a parking space with no way to reach the other driver. The concept was simple: scan a license plate, the system finds the owner, and a push notification reaches them instantly.\n\nThe project is presented as a short 3D animated trailer created entirely in Blender. The animation walks through a real-world scenario — a driver trapped behind a blocking car, opening the app, scanning the plate, and watching the offending car move within minutes. Every scene was modeled, rigged, and animated manually.\n\nThe editing and color grading were done in DaVinci Resolve, where the final cut was assembled with motion graphics, sound design, and a cinematic grade to give the concept a polished, professional feel.\n\nBeyond the trailer, the concept was also fleshed out into a broader product vision: a city-wide parking availability map, integration with municipal parking systems, and an AI layer that predicts parking congestion by time of day and location.\n\nThis project was primarily an exercise in 3D storytelling and product concept visualization — translating an abstract app idea into something tangible and compelling through motion.",
-    "link": "https://sargisxachatryan.github.io/CV/resources/2_EasyPark_Video.mp4",
-    "video": "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Video.mp4",
+    "link": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Video.mp4",
+    "video": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Video.mp4",
     "gallery": [
-      "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Img1.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Img2.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Img3.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Img4.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/2_EasyPark_Img5.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img5.jpg"
     ]
   },
   {
@@ -56,17 +56,17 @@
       "Blender"
     ],
     "year": 2026,
-    "image": "https://sargisXachatryan.github.io/CV/resources/3_HK416_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Thumbnail.jpg",
     "details": "The model was created in Blender and consists of 40,991 triangles. It includes a fully rigged bone system designed to simulate realistic firearm mechanics, allowing for full animation of components such as the trigger and other movable parts. The asset was built with clean topology and UV mapping to support different rendering workflows, including textured and non-textured (solid) visual modes. It is optimized for animation, with a fully controllable rig that allows realistic motion simulation of firearm operation within 3D environments.",
     "gallery": [
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img1.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img2.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img3.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img4.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img5.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img6.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img7.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/3_HK416_Img8.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img8.jpg"
     ]
   },
   {
@@ -78,16 +78,16 @@
       "Blender"
     ],
     "year": 2025,
-    "image": "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Thumbnail.jpg",
     "details": "A meticulously handcrafted 3D game character created entirely within Blender, featuring two optimized versions with 91,626 and 71,698 triangles respectively. The character features a high-fidelity grooming system for the hair, beard, mustache, and eyebrows, developed by converting splines and curves into meshes with rendered hair cards rather than utilizing traditional hair strips. The texturing is a hybrid of procedural methods and hand-adjusted reference imagery; specifically, the jeans utilize actual textures while items like the hoodie, shorts, and shoes utilize atlas textures for materials like cotton and rubber. The skin is reconstructed from a real 3D photo-scan, using procedural texturing to maintain high-resolution color variation. For added realism, the eyes are built with translucent objects that realistically bend light. All assets are fully baked into textures, ensuring the model is completely portable and functional in any software or game engine outside of Blender.",
-    "video": "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Video.mp4",
+    "video": "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Video.mp4",
     "gallery": [
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img1.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img2.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img3.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img4.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img5.jpg",
-      "https://sargisXachatryan.github.io/CV/resources/4_Thomas_Img6.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img6.jpg"
     ]
   }
 ]
