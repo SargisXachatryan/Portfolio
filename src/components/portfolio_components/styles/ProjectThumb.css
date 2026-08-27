@@ -12,6 +12,12 @@
   background: var(--surface);
   cursor: pointer;
   transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+  /* Touch devices: an <img> inside an <a> triggers the browser's
+     long-press "save image / open in new tab" menu, which felt like a
+     broken tap. This turns that off without affecting desktop at all. */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .thumb:hover {
   transform: translateY(-4px);
@@ -63,4 +69,45 @@
   font-size: 10px;
   color: var(--accent);
   letter-spacing: 0.06em;
+}
+
+/* Tablet / small laptop: cards flex within the grid instead of being
+   pinned to a fixed 220px, so 2–3 fit per row instead of overflowing.
+   There's no reliable hover here, so instead of forcing the hover-reveal
+   overlay permanently on (which just sits on top of the photo), the
+   caption moves into normal flow below the image. */
+@media (max-width: 1024px) {
+  .thumb {
+    flex: unset;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .thumb-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .thumb:hover .thumb-img { transform: none; }
+
+  .thumb-info {
+    position: static;
+    background: var(--surface2);
+    padding: 8px 10px;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .thumb-img {
+    aspect-ratio: 3 / 2;
+  }
+  .thumb-title {
+    font-size: 13px;
+  }
+  .thumb-sub {
+    font-size: 9px;
+  }
 }

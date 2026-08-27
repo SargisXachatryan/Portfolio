@@ -1,0 +1,121 @@
+/* ═══════════════════════════════════════════════════════════════
+   ProjectSidebar — title, meta, description, CTA
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════
+   Sidebar — FIX: wider
+   ═══════════════════════════════════════════════════════════════ */
+
+.pp-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(22, 21, 16, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+
+.pp-sidebar-subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.pp-sidebar-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 52px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--heading);
+  margin: 0;
+}
+
+.pp-sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.pp-meta-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+.pp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pp-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 3px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  background: var(--accent-dim);
+  letter-spacing: 0.06em;
+}
+
+.pp-sidebar-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 0;
+}
+
+.pp-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--heading);
+  text-decoration: none;
+  padding: 11px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.pp-cta:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.pp-cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.pp-cta:hover .pp-cta-arrow {
+  transform: translateX(4px);
+}
+
+.pp-media-count {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  margin: 0;
+  margin-top: auto;
+}
+

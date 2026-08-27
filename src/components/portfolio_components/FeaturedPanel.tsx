@@ -1,5 +1,5 @@
-import type { Project } from '../types'
-import '../styles/FeaturedPanel.css'
+import type { Project } from '../../types'
+import './styles/FeaturedPanel.css'
 
 interface Props {
   project: Project | null

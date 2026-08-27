@@ -1,0 +1,163 @@
+/* ═══════════════════════════════════════════════════════════════
+   ProjectPage — Steam-inspired layout + Custom Video Player
+   ═══════════════════════════════════════════════════════════════ */
+
+.pp-root {
+  position: relative;
+  flex: 1;
+  min-height: calc(100svh - var(--navbar-h));
+}
+
+/* ── Blurred backdrop ── */
+.pp-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.pp-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(28px) saturate(0.6);
+  transform: scale(1.08);
+}
+
+.pp-backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom,
+      rgba(14, 13, 11, 0.72) 0%,
+      rgba(14, 13, 11, 0.96) 40%,
+      rgba(14, 13, 11, 1) 100%);
+}
+
+/* ── Content ── */
+.pp-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 40px 80px;
+}
+
+/* ── Back link ── */
+.pp-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.pp-back:hover {
+  color: var(--heading);
+}
+
+.pp-back-arrow {
+  font-size: 14px;
+  transition: transform 0.2s;
+}
+
+.pp-back:hover .pp-back-arrow {
+  transform: translateX(-3px);
+}
+
+/* ── Top layout ── */
+.pp-top {
+  display: grid;
+  /* FIX: sidebar is wider — 400px instead of 320px */
+  grid-template-columns: 1fr 400px;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 52px;
+}
+
+/* ── Viewer column ── */
+.pp-viewer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+
+/* ── Main display ── */
+.pp-main-display {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+
+/* ── Not found ── */
+.pp-not-found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.pp-not-found a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .pp-content {
+    padding: 24px 24px 60px;
+  }
+
+  .pp-top {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .pp-content {
+    padding: 20px 16px 48px;
+  }
+
+  .pp-strip-thumb {
+    flex: 0 0 88px;
+    width: 88px;
+    height: 50px;
+  }
+
+  .pp-strip-ghost {
+    flex: 0 0 88px;
+    width: 88px;
+    height: 50px;
+  }
+
+  .pp-strip-page-btn {
+    height: 50px;
+  }
+
+  .pp-volume-slider {
+    width: 52px;
+  }
+}

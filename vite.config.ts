@@ -4,11 +4,11 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base:'/Portfolio/',
+  base: '/Portfolio/',
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(import.meta.dirname, 'index.html'),
       },
     },
   },

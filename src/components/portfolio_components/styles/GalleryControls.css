@@ -77,7 +77,13 @@
 }
 
 @media (max-width: 640px) {
-  .controls { flex-direction: column; align-items: stretch; }
+  .controls { flex-direction: column; align-items: stretch; gap: 12px; }
   .search-wrap { width: 100%; }
   .search, .search:focus { width: 100%; }
+
+  /* Scrollable tag row instead of wrapping — keeps all tags reachable
+     without turning into a tall block of pills above the search bar. */
+  
+  .filters::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
 }

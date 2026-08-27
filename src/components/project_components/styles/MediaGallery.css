@@ -1,0 +1,204 @@
+/* ═══════════════════════════════════════════════════════════════
+   MediaGallery — main image/video display, arrow nav, thumbnail strip
+   ═══════════════════════════════════════════════════════════════ */
+
+.pp-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: ppFadeIn 0.3s ease;
+}
+
+.pp-main-image--clickable {
+  cursor: zoom-in;
+}
+
+@keyframes ppFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Arrow nav (images) */
+.pp-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  background: rgba(14, 13, 11, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--heading);
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+  opacity: 0;
+}
+
+.pp-main-display:hover .pp-nav {
+  opacity: 1;
+}
+
+.pp-nav:disabled {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+.pp-nav:hover {
+  background: rgba(212, 168, 67, 0.15);
+  border-color: var(--accent-border);
+}
+
+.pp-nav-prev {
+  left: 12px;
+}
+
+.pp-nav-next {
+  right: 12px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   Thumbnail strip
+   FIX: fixed per-thumb width instead of flex:1 stretch
+   ═══════════════════════════════════════════════════════════════ */
+
+.pp-strip-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pp-strip-page-btn {
+  margin-top: 10px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.pp-strip-page-btn:hover:not(:disabled) {
+  background: rgba(212, 168, 67, 0.1);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.pp-strip-page-btn:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Strip — space-between distributes real thumbs + ghost placeholders evenly */
+.pp-strip {
+  display: flex;
+  padding-top: 10px;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.pp-strip-thumb {
+  position: relative;
+  /* FIX: fixed size — never stretches to fill remaining space */
+  flex: 0 0 112px;
+  width: 112px;
+  height: 63px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--surface);
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.pp-strip-thumb:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.pp-strip-thumb.active {
+  border-color: var(--accent);
+}
+
+/* Ghost placeholder — same size as a real thumb, completely invisible */
+.pp-strip-ghost {
+  flex: 0 0 112px;
+  width: 112px;
+  height: 63px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+  cursor: default;
+  padding: 0;
+}
+
+/* Video thumbnails dim slightly to signal interactivity */
+.pp-strip-thumb.is-video .pp-strip-img {
+  filter: brightness(0.75);
+  transition: filter 0.2s;
+}
+
+.pp-strip-thumb.is-video:hover .pp-strip-img,
+.pp-strip-thumb.is-video.active .pp-strip-img {
+  filter: brightness(0.6);
+}
+
+.pp-strip-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SVG play button overlay on video thumbnails */
+.pp-strip-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pp-strip-play-icon {
+  width: 32px;
+  height: 32px;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+  transition: transform 0.2s;
+}
+
+.pp-strip-thumb:hover .pp-strip-play-icon {
+  transform: scale(1.12);
+}
+

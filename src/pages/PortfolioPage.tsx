@@ -1,18 +1,72 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import projectsData from '../data/projects.json'
 import type { Project, Tag } from '../types/index'
-import FeaturedPanel from '../components/FeaturedPanel'
-import GalleryControls from '../components/GalleryControls'
-import ProjectThumb from '../components/ProjectThumb'
-import '../styles/PortfolioPage.css'
+import FeaturedPanel from '../components/portfolio_components/FeaturedPanel'
+import GalleryControls from '../components/portfolio_components/GalleryControls'
+import ProjectThumb from '../components/portfolio_components/ProjectThumb'
+import PortfolioSkeleton from '../components/portfolio_components/PortfolioSkeleton'
+import './styles/PortfolioPage.css'
 
 const PROJECTS = projectsData as Project[]
 const ALL_TAGS: Tag[] = ['All' as Tag, ...Array.from(new Set(PROJECTS.flatMap((p) => p.tags))).sort()]
+
+// How many thumbnail images to wait on before showing the real gallery —
+// waiting on every project would delay the reveal on large portfolios for
+// no visible benefit, since only the first screenful is visible anyway.
+const PRELOAD_COUNT = 8
+
+// Below this width the thumbnail grid switches to 2–3 columns (see
+// PortfolioPage.css) and paginates with a "Load more" button — a fixed
+// desktop-style grid on a narrow screen used to squeeze every card into a
+// single column, which felt broken.
+const PAGINATE_BREAKPOINT = '(max-width: 900px)'
+const PAGE_SIZE = 6
 
 export default function PortfolioPage() {
   const [activeTag, setActiveTag] = useState<Tag>('All' as Tag)
   const [query, setQuery] = useState('')
   const [featured, setFeatured] = useState<Project>(PROJECTS[0])
+  const [galleryReady, setGalleryReady] = useState(false)
+  const [isPaginated, setIsPaginated] = useState(false)
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+
+  useEffect(() => {
+    const mq = window.matchMedia(PAGINATE_BREAKPOINT)
+    const update = () => setIsPaginated(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  // Preload the featured image + the first page of thumbnails so the
+  // skeleton is standing in for real network/decode time, not an
+  // artificial delay.
+  useEffect(() => {
+    const toPreload = [PROJECTS[0]?.image, ...PROJECTS.slice(0, PRELOAD_COUNT).map((p) => p.image)]
+      .filter((src): src is string => Boolean(src))
+
+    if (toPreload.length === 0) {
+      setGalleryReady(true)
+      return
+    }
+
+    let cancelled = false
+    let remaining = toPreload.length
+    const settle = () => {
+      remaining -= 1
+      if (remaining <= 0 && !cancelled) setGalleryReady(true)
+    }
+
+    toPreload.forEach((src) => {
+      const img = new Image()
+      img.onload = settle
+      img.onerror = settle
+      img.src = src
+      if (img.complete) settle()
+    })
+
+    return () => { cancelled = true }
+  }, [])
 
   const filtered = useMemo(() => {
     return PROJECTS.filter((p) => {
@@ -26,9 +80,21 @@ export default function PortfolioPage() {
     })
   }, [activeTag, query])
 
+  // Reset to the first page whenever the result set or breakpoint changes,
+  // so it can't get stuck showing a stale partial list after a filter change.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [activeTag, query, isPaginated])
+
   const noResults = filtered.length === 0
   // Keep last known project as background when no results
   const safeFeatured = filtered.find((p) => p.id === featured.id) ?? filtered[0] ?? featured
+  const displayed = isPaginated ? filtered.slice(0, visibleCount) : filtered
+  const hasMore = isPaginated && visibleCount < filtered.length
+
+  if (!galleryReady) {
+    return <PortfolioSkeleton />
+  }
 
   return (
     <main className="portfolio-page">
@@ -44,7 +110,7 @@ export default function PortfolioPage() {
         />
 
         <div className="thumbnails">
-          {!noResults && filtered.map((project) => (
+          {!noResults && displayed.map((project) => (
             <ProjectThumb
               key={project.id}
               project={project}
@@ -53,6 +119,18 @@ export default function PortfolioPage() {
             />
           ))}
         </div>
+
+        {hasMore && (
+          <div className="load-more-wrap">
+            <button
+              type="button"
+              className="load-more-btn"
+              onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+            >
+              Load more
+            </button>
+          </div>
+        )}
       </div>
 
       {/* ── Contact Section ── */}
@@ -111,7 +189,7 @@ export default function PortfolioPage() {
               </div>
               <span className="contact-card-arrow">→</span>
             </a>
-            
+
           </div>
         </div>
       </section>

@@ -1,0 +1,62 @@
+/* ═══════════════════════════════════════════════════════════════
+   ProjectDetails — full write-up section
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Details / full description ── */
+.pp-desc-section {
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+  max-width: 760px;
+}
+
+.pp-desc-heading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 40px);
+  letter-spacing: 0.03em;
+  color: var(--heading);
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+/* Cover thumbnail above the write-up — matches .pp-desc-section's own
+   max-width (760px), so it sits at "text width", not the full page width. */
+.pp-desc-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.pp-desc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pp-desc-body p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+/* Images embedded in the write-up via $$index$$ — own block, never
+   crowds the surrounding text (the gap on .pp-desc-body already separates it). */
+.pp-detail-image {
+  margin: 6px 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.pp-detail-image-img {
+  display: block;
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+}
+
+

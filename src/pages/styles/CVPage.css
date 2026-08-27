@@ -49,6 +49,9 @@
   position: relative;
   width: 100%;
   min-height: 70vh; /* only matters while the loading/error message is showing */
+  overflow-x: auto; /* safety net — react-pdf sizes pages to `width`, but this
+                        guarantees a scrollbar rather than a clipped edge if
+                        rounding ever pushes a page a pixel or two too wide */
 }
 
 /* Pages stack full-width — the page itself scrolls once content exceeds
@@ -64,12 +67,59 @@
   width: 100%;
 }
 
+/* While pages are still painting onto their canvases: keep them mounted
+   (so react-pdf can actually do that painting) but pulled out of the
+   document flow and invisible, so the skeleton above is the only thing
+   on screen — no half-blank canvas flash. */
+.cv-pdf-doc.is-rendering {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Once every page has finished painting, this just switches back into
+   normal flow. No transition on purpose — the canvases are already fully
+   drawn by this point, so there's nothing to fade; it's a plain, instant
+   reveal of already-finished content rather than a fade-in of new content. */
+.cv-pdf-doc.is-visible {
+  position: static;
+  visibility: visible;
+}
+
 .cv-pdf-page {
   margin-bottom: 12px;
 }
 
 .cv-pdf-page:last-child {
   margin-bottom: 0;
+}
+
+/* ── Loading skeleton — page-shaped placeholders, same wrapper/width as
+   the real PDF pages so nothing shifts once they mount in ── */
+.cv-skeleton-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.cv-skeleton-page {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1 / 1.414; /* roughly A4 proportions */
+  border-radius: 4px;
+}
+
+/* A second, partially-cropped page peeking in below — hints that the
+   document continues, without claiming to know the real page count yet. */
+.cv-skeleton-page--peek {
+  aspect-ratio: unset;
+  height: 140px;
+  opacity: 0.55;
+  mask-image: linear-gradient(to bottom, black, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 .cv-viewer-status {
@@ -137,12 +187,23 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1024px) {
+  .cv-page {
+    padding: 36px 24px 64px;
+  }
+}
+
 @media (max-width: 640px) {
   .cv-page {
-    padding: 28px 16px 48px;
+    padding: 20px 8px 40px;
   }
 
   .cv-viewer-wrap {
     min-height: 60vh;
+  }
+
+  .cv-download {
+    padding: 10px 22px;
+    font-size: 11px;
   }
 }

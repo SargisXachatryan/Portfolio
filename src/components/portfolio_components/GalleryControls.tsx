@@ -1,4 +1,4 @@
-import '../styles/GalleryControls.css'
+import './styles/GalleryControls.css'
 
 interface Props {
   tags: string[]

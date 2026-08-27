@@ -1,0 +1,46 @@
+/* ═══════════════════════════════════════════════════════════════
+   Skeleton — shared gray-box placeholder + shimmer
+   ═══════════════════════════════════════════════════════════════ */
+
+.skeleton-block {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface2, rgba(255, 255, 255, 0.06));
+  border: 1px solid var(--border, rgba(255, 255, 255, 0.08));
+}
+
+/* Text-line skeletons (title, paragraph, etc.) look better with a small
+   radius even when the real element they stand in for has none. */
+.skeleton-line {
+  border-radius: 4px;
+  border: none;
+  background: var(--surface2, rgba(255, 255, 255, 0.06));
+}
+
+.skeleton-block::after,
+.skeleton-line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.07),
+    transparent
+  );
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-block::after,
+  .skeleton-line::after {
+    animation: none;
+  }
+}
