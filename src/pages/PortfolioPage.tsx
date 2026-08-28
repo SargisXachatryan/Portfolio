@@ -177,7 +177,7 @@ export default function PortfolioPage() {
               <span className="contact-card-arrow">→</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/sargis-xachatryan-009b102a5/" target="_blank" rel="noopener noreferrer" className="contact-card">
+            <a href="https://www.linkedin.com/in/sargis-khachatryan-009b102a5/" target="_blank" rel="noopener noreferrer" className="contact-card">
               <div className="contact-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
