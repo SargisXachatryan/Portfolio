@@ -21,6 +21,7 @@ export default function ProjectThumb({ project, isActive, onSelect }: Props) {
     <Link
       to={`/Portfolio/project/${project.id}`}
       className={`thumb ${isActive ? 'active' : ''}`}
+      data-project-id={project.id}
       onMouseEnter={supportsHover ? () => onSelect(project) : undefined}
     >
       <img src={project.image} alt={project.title} className="thumb-img" />

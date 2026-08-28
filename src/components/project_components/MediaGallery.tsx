@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Project } from '../../types'
 import type { MediaItem } from '../../utils/projectMedia'
 import VideoPlayer from './VideoPlayer'
 import './styles/MediaGallery.css'
 
 const STRIP_PAGE_SIZE = 5
+// Minimum horizontal drag (px) before a touch gesture on the main image
+// counts as a swipe rather than a tap.
+const SWIPE_THRESHOLD = 40
 
 interface MediaGalleryProps {
   project: Project
@@ -29,18 +32,28 @@ export default function MediaGallery({
   videoPlaying,
   onImageClick,
 }: MediaGalleryProps) {
-  // Which "page" of 5 thumbnails we're on
+  // Which "page" of 5 thumbnails we're on (desktop only — see supportsHover)
   const [stripPage, setStripPage] = useState(0)
+
+  // No fine hover-capable pointer (phones/tablets) — on these devices the
+  // thumbnail strip becomes one continuous scrollable row instead of a
+  // paginated 5-at-a-time strip with buttons, arrow-nav buttons disappear,
+  // and the main image responds to swipe instead.
+  const supportsHover =
+    typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
   const active = media[activeIndex]
   const totalStripPages = Math.ceil(media.length / STRIP_PAGE_SIZE)
   const stripStart = stripPage * STRIP_PAGE_SIZE
-  const visibleMedia = media.slice(stripStart, stripStart + STRIP_PAGE_SIZE)
+  const visibleMedia = supportsHover ? media.slice(stripStart, stripStart + STRIP_PAGE_SIZE) : media
 
   // When active index changes, make sure we're on the right strip page
+  // (desktop pagination only — mobile shows every thumbnail at once)
   useEffect(() => {
+    if (!supportsHover) return
     const page = Math.floor(activeIndex / STRIP_PAGE_SIZE)
     setStripPage(page)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex])
 
   const handleThumbClick = (globalIdx: number) => {
@@ -62,12 +75,55 @@ export default function MediaGallery({
     }
   }
 
+  // ── Swipe-to-navigate on the main display (mobile only) ──────────────
+  // Mirrors the desktop arrow buttons: swipe left → next image, swipe
+  // right → previous image. Only active for images; video has its own
+  // controls. A ref (not state) is enough since it's only read inside
+  // the image's onClick to distinguish a swipe from a tap.
+  const swipeState = useRef({ startX: 0, startY: 0, swiping: false })
+
+  const handleMainTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0]
+    if (!t) return
+    swipeState.current = { startX: t.clientX, startY: t.clientY, swiping: false }
+  }
+
+  const handleMainTouchMove = (e: React.TouchEvent) => {
+    if (active?.kind !== 'image') return
+    const t = e.touches[0]
+    if (!t) return
+    const dx = t.clientX - swipeState.current.startX
+    const dy = t.clientY - swipeState.current.startY
+    if (!swipeState.current.swiping && Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy)) {
+      swipeState.current.swiping = true
+    }
+  }
+
+  const handleMainTouchEnd = (e: React.TouchEvent) => {
+    if (active?.kind !== 'image') return
+    const t = e.changedTouches[0]
+    if (!t || !swipeState.current.swiping) return
+    const dx = t.clientX - swipeState.current.startX
+    if (Math.abs(dx) < SWIPE_THRESHOLD) return
+    if (dx < 0) {
+      onActiveIndexChange(Math.min(media.length - 1, activeIndex + 1))
+    } else {
+      onActiveIndexChange(Math.max(0, activeIndex - 1))
+    }
+    onAutoPlayVideoChange(false)
+  }
+
   if (!active) return null
 
   return (
     <>
       {/* Main display */}
-      <div className="pp-main-display">
+      <div
+        className="pp-main-display"
+        onTouchStart={handleMainTouchStart}
+        onTouchMove={handleMainTouchMove}
+        onTouchEnd={handleMainTouchEnd}
+      >
         {active.kind === 'video' ? (
           <VideoPlayer
             src={active.src}
@@ -82,11 +138,13 @@ export default function MediaGallery({
             src={active.src}
             alt={project.title}
             className="pp-main-image pp-main-image--clickable"
-            onClick={() => onImageClick(active.src)}
+            onClick={() => { if (!swipeState.current.swiping) onImageClick(active.src) }}
           />
         )}
 
-        {/* Arrow nav (images only — video has its own controls) */}
+        {/* Arrow nav (images only — video has its own controls). Hidden on
+            touch devices via CSS (see .pp-nav in MediaGallery.css) — swipe
+            replaces it there. */}
         {media.length > 1 && active.kind === 'image' && (
           <>
             <button
@@ -105,20 +163,25 @@ export default function MediaGallery({
         )}
       </div>
 
-      {/* Paginated thumbnail strip */}
+      {/* Thumbnail strip — paginated with buttons on desktop; on touch
+          devices it's every thumbnail in one naturally scrollable row
+          (see .pp-strip in MediaGallery.css), so there's no mismatch
+          between how many are visible and how many a page-button jumps by. */}
       {media.length > 1 && (
         <div className="pp-strip-wrap">
-          {/* Prev page button */}
-          <button
-            className="pp-strip-page-btn"
-            onClick={() => setStripPage((p) => Math.max(0, p - 1))}
-            disabled={stripPage === 0}
-            aria-label="Previous thumbnails"
-          >‹</button>
+          {/* Prev page button (desktop only) */}
+          {supportsHover && (
+            <button
+              className="pp-strip-page-btn"
+              onClick={() => setStripPage((p) => Math.max(0, p - 1))}
+              disabled={stripPage === 0}
+              aria-label="Previous thumbnails"
+            >‹</button>
+          )}
 
           <div className="pp-strip">
             {visibleMedia.map((item, localIdx) => {
-              const globalIdx = stripStart + localIdx
+              const globalIdx = supportsHover ? stripStart + localIdx : localIdx
               return (
                 <button
                   key={globalIdx}
@@ -149,19 +212,21 @@ export default function MediaGallery({
                 </button>
               )
             })}
-            {/* Ghost placeholders — fill remaining slots so space-between stays stable */}
-            {Array.from({ length: STRIP_PAGE_SIZE - visibleMedia.length }).map((_, i) => (
+            {/* Ghost placeholders (desktop only) — fill remaining slots so space-between stays stable */}
+            {supportsHover && Array.from({ length: STRIP_PAGE_SIZE - visibleMedia.length }).map((_, i) => (
               <div key={`ghost-${i}`} className="pp-strip-thumb pp-strip-ghost" aria-hidden="true" />
             ))}
           </div>
 
-          {/* Next page button */}
-          <button
-            className="pp-strip-page-btn"
-            onClick={() => setStripPage((p) => Math.min(totalStripPages - 1, p + 1))}
-            disabled={stripPage >= totalStripPages - 1}
-            aria-label="Next thumbnails"
-          >›</button>
+          {/* Next page button (desktop only) */}
+          {supportsHover && (
+            <button
+              className="pp-strip-page-btn"
+              onClick={() => setStripPage((p) => Math.min(totalStripPages - 1, p + 1))}
+              disabled={stripPage >= totalStripPages - 1}
+              aria-label="Next thumbnails"
+            >›</button>
+          )}
         </div>
       )}
     </>

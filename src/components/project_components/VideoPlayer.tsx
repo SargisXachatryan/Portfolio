@@ -18,6 +18,16 @@ export default function VideoPlayer({ src, poster, isYouTube, autoPlay = false, 
   // For real-time drag on progress bar
   const isDragging = useRef(false)
   const progressBarRef = useRef<HTMLDivElement>(null)
+  // Pending single-tap timers for the mobile double-tap-to-skip zones,
+  // keyed by side, so a lone tap can still resolve to play/pause.
+  const tapTimer = useRef<{ left: ReturnType<typeof setTimeout> | null; right: ReturnType<typeof setTimeout> | null }>({ left: null, right: null })
+  const lastTap = useRef<{ left: number; right: number }>({ left: 0, right: 0 })
+
+  // No fine hover-capable pointer (phones/tablets) — adds the two edge
+  // zones for double-tap-to-skip, on top of (not replacing) the normal
+  // control bar, which stays exactly as-is on both desktop and mobile.
+  const supportsHover =
+    typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
   const [playing, setPlaying] = useState(false)
   const [volume, setVolume] = useState(1)
@@ -163,6 +173,37 @@ export default function VideoPlayer({ src, poster, isYouTube, autoPlay = false, 
     return `${m}:${sec.toString().padStart(2, '0')}`
   }
 
+  // Double-tap-to-skip on the mobile edge zones. A single tap resolves
+  // (after a short wait, in case a second tap follows) to a normal
+  // play/pause toggle — same as tapping anywhere else on the video. A
+  // second tap within 300ms on the same side skips instead.
+  const handleZoneTap = useCallback((side: 'left' | 'right') => {
+    const now = Date.now()
+    const since = now - lastTap.current[side]
+    const pending = tapTimer.current[side]
+    if (pending) {
+      clearTimeout(pending)
+      tapTimer.current[side] = null
+    }
+    if (since < 300) {
+      lastTap.current[side] = 0
+      skip(side === 'left' ? -5 : 5)
+    } else {
+      lastTap.current[side] = now
+      tapTimer.current[side] = setTimeout(() => {
+        togglePlay()
+        tapTimer.current[side] = null
+      }, 300)
+    }
+  }, [skip, togglePlay])
+
+  useEffect(() => {
+    return () => {
+      if (tapTimer.current.left) clearTimeout(tapTimer.current.left)
+      if (tapTimer.current.right) clearTimeout(tapTimer.current.right)
+    }
+  }, [])
+
   // YouTube fallback — just render an iframe
   if (isYouTube) {
     const embedSrc = (() => {
@@ -210,6 +251,22 @@ export default function VideoPlayer({ src, poster, isYouTube, autoPlay = false, 
       >
         <source src={src} />
       </video>
+
+      {/* Double-tap zones — mobile only. Sit above the video but below
+          the pause-overlay and controls bar, so tapping the visible
+          center third still falls through to the video's own onClick. */}
+      {!supportsHover && (
+        <>
+          <div
+            className="pp-tap-zone pp-tap-zone-left"
+            onTouchEnd={(e) => { e.preventDefault(); handleZoneTap('left') }}
+          />
+          <div
+            className="pp-tap-zone pp-tap-zone-right"
+            onTouchEnd={(e) => { e.preventDefault(); handleZoneTap('right') }}
+          />
+        </>
+      )}
 
       {/* Big play overlay when paused */}
       {!playing && (

@@ -105,7 +105,7 @@
     background: none !important;
     color: var(--accent) !important;
     width: 100%;
-    text-align: left;
+    text-align: center;
     border-bottom: 1px solid var(--border) !important;
     border-radius: 0 !important;
   }

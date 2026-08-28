@@ -119,3 +119,8 @@
   margin-top: auto;
 }
 
+@media (max-width: 900px) {
+  .pp-cta {
+    align-self: center;
+  }
+}

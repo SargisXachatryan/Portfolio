@@ -44,9 +44,11 @@ export default function FeaturedPanel({ project, noResults }: Props) {
       {/* Year badge — solid, always readable */}
       <div className="featured-year-badge">
         <span>{project.year}</span>
-        {project.tags.map((t) => (
-          <span key={t} className="tag-pill">{t}</span>
-        ))}
+        <div className="tag-pill-scroll">
+          {project.tags.map((t) => (
+            <span key={t} className="tag-pill">{t}</span>
+          ))}
+        </div>
       </div>
 
       <div className="featured-body">
@@ -54,8 +56,8 @@ export default function FeaturedPanel({ project, noResults }: Props) {
         <h2 className="featured-title">{project.title}</h2>
         <p className="featured-desc">{project.description}</p>
         {project.link && (
-          <a href={"/CV/portfolio/"+project.id} className="featured-cta">
-            View Details <span className="arrow">→</span>
+          <a href={project.link} className="featured-cta">
+            View Project <span className="arrow">→</span>
           </a>
         )}
       </div>

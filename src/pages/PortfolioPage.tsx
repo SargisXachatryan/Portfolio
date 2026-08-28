@@ -92,6 +92,22 @@ export default function PortfolioPage() {
   const displayed = isPaginated ? filtered.slice(0, visibleCount) : filtered
   const hasMore = isPaginated && visibleCount < filtered.length
 
+  // Touch equivalent of onMouseEnter: as a finger drags across the
+  // thumbnail row/grid, find whichever thumb is currently underneath it
+  // and preview that project — same effect as hovering with a mouse. A
+  // plain tap (no movement) never fires this, so normal Link navigation
+  // on tap is untouched.
+  const handleThumbTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0]
+    if (!touch) return
+    const el = document.elementFromPoint(touch.clientX, touch.clientY)
+    const thumbEl = el?.closest<HTMLElement>('[data-project-id]')
+    const id = thumbEl?.dataset.projectId
+    if (!id) return
+    const project = displayed.find((p) => String(p.id) === id)
+    if (project && project.id !== safeFeatured?.id) setFeatured(project)
+  }
+
   if (!galleryReady) {
     return <PortfolioSkeleton />
   }
@@ -109,7 +125,7 @@ export default function PortfolioPage() {
           onQueryChange={setQuery}
         />
 
-        <div className="thumbnails">
+        <div className="thumbnails" onTouchMove={handleThumbTouchMove}>
           {!noResults && displayed.map((project) => (
             <ProjectThumb
               key={project.id}

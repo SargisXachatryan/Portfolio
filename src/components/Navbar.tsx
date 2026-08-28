@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { NavLink, useNavigate, useLocation } from 'react-router-dom'
-import '../styles/Navbar.css'
+import './styles/Navbar.css'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -8,26 +8,42 @@ export default function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
 
+  // Locks mobile body scrolling when the menu modal is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [open])
+
+  // Handles smooth scrolling to #contact when navigating or on current page
   const handleContact = () => {
     setOpen(false)
-    const isPortfolio = location.pathname.startsWith(`CV`)
+    const isPortfolio = location.pathname === base || location.pathname === base.slice(0, -1)
 
-    if (isPortfolio) {
-      // Already on portfolio page — just scroll
-      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      // Navigate to portfolio then scroll after render
+    const triggerScroll = () => {
+      const el = document.getElementById('contact')
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+
+    if (!isPortfolio) {
       navigate(base)
-      setTimeout(() => {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
-      }, 300)
+      // Small tick delay gives React Router time to mount the target page DOM
+      setTimeout(triggerScroll, 100)
+    } else {
+      triggerScroll()
     }
   }
 
   return (
     <header className="navbar">
-      {/* end=true means only active when path is exactly /CV/ */}
-      <NavLink to={base} end className="navbar-logo">
+      <NavLink to={base} end className="navbar-logo" onClick={() => setOpen(false)}>
         Sargis Khachatryan
       </NavLink>
 
@@ -39,10 +55,12 @@ export default function Navbar() {
         <span /><span /><span />
       </button>
 
+      {/* Mobile backdrop for tapping outside */}
+      {open && <div className="navbar-backdrop" onClick={() => setOpen(false)} />}
+
       <nav className={`navbar-links ${open ? 'open' : ''}`}>
-        {/* end=true: only active on exact /CV/ — not on /CV/portfolio */}
         <NavLink to={base} end onClick={() => setOpen(false)}>Portfolio</NavLink>
-        <NavLink to={base + 'CV'} onClick={() => setOpen(false)}>CV</NavLink>
+        <NavLink to={`${base}CV`} onClick={() => setOpen(false)}>CV</NavLink>
         <button className="navbar-cta" onClick={handleContact}>
           Contact
         </button>

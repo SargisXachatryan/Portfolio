@@ -12,6 +12,7 @@
 
 .pp-main-image--clickable {
   cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @keyframes ppFadeIn {
@@ -49,6 +50,7 @@
   cursor: pointer;
   transition: background 0.2s, opacity 0.2s;
   opacity: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pp-main-display:hover .pp-nav {
@@ -63,6 +65,15 @@
 .pp-nav:hover {
   background: rgba(212, 168, 67, 0.15);
   border-color: var(--accent-border);
+}
+
+/* No fine hover-capable pointer (phones/tablets) — swipe replaces the
+   arrow buttons on the main image, so they're removed entirely rather
+   than just left invisible-until-hover (which never resolves on touch). */
+@media (hover: none) {
+  .pp-nav {
+    display: none;
+  }
 }
 
 .pp-nav-prev {
@@ -101,6 +112,7 @@
   color: var(--text-dim);
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pp-strip-page-btn:hover:not(:disabled) {
@@ -126,6 +138,22 @@
   align-items: flex-start;
 }
 
+/* No fine hover-capable pointer — the strip isn't paginated with buttons
+   here (they're not rendered at all, see MediaGallery.tsx), it's every
+   thumbnail in one row that scrolls naturally with a swipe. */
+@media (hover: none) {
+  .pp-strip {
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .pp-strip::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .pp-strip-thumb {
   position: relative;
   /* FIX: fixed size — never stretches to fill remaining space */
@@ -139,6 +167,7 @@
   cursor: pointer;
   padding: 0;
   transition: border-color 0.2s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pp-strip-thumb:hover {
@@ -201,4 +230,3 @@
 .pp-strip-thumb:hover .pp-strip-play-icon {
   transform: scale(1.12);
 }
-
