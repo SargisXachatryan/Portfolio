@@ -4,7 +4,7 @@ Personal CV and project portfolio, built with React + TypeScript + Vite and depl
 
 ---
 
-**[→ View CV](https://sargisxachatryan.github.io/CV/)**　　**[→ View Portfolio](https://sargisxachatryan.github.io/CV/portfolio)**
+**[→ View CV](https://sargisxachatryan.github.io/Portfolio/CV)**　　**[→ View Portfolio](https://sargisxachatryan.github.io/Portfolio)**
 
 ---
 

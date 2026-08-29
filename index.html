@@ -6,14 +6,10 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio & CV</title>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
   <!-- ============================================================
-  GitHub Pages SPA fix — paste this script into the <head> of
-  your  public/index.html  BEFORE any other scripts.
+  GitHub Pages SPA fix — must run BEFORE the app's module script
+  below, so window.location is already restored to the real path
+  by the time React (and the router) reads it.
   Works together with 404.html which redirects unknown paths
   back to index with ?p=<encoded-path>.
   ============================================================ -->
@@ -31,6 +27,11 @@
       }
     })();
   </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

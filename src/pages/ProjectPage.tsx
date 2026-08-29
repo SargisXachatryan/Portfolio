@@ -95,7 +95,7 @@ export default function ProjectPage() {
         const player = document.querySelector('.pp-video-player') as HTMLElement | null
         player?.dispatchEvent(new CustomEvent('pp-toggle-play'))
       }
-      if (e.key === 'Escape') navigate('/CV/portfolio')
+      if (e.key === 'Escape') navigate('/Portfolio')
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -125,7 +125,7 @@ export default function ProjectPage() {
     return (
       <main className="pp-not-found">
         <p>Project not found.</p>
-        <Link to="/CV/portfolio">← Back to work</Link>
+        <Link to="/Portfolio">← Back to work</Link>
       </main>
     )
   }
