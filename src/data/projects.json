@@ -40,14 +40,14 @@
     "id": 2,
     "title": "Easy Park",
     "subtitle": "3D / Animation",
-    "description": "Easy Park is a concept project centered around improving everyday parking frustrations through a simple, user-focused solution. The idea introduces a system that allows drivers to quickly identify and notify vehicle owners when their car is blocking access, using license plate recognition and instant alerts.",
+    "description": "Easy Park is a 3D animated concept trailer for a mobile app designed to resolve urban parking gridlock. Built around a license plate scanning system that lets drivers instantly notify owners of blocked vehicles, the project was modeled, staged, and rendered in Blender to demonstrate motion design, camera composition, and app store promotional visualization.",
     "tags": [
       "Blender",
       "Davinci Resolve"
     ],
     "year": 2025,
     "image": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Thumbnail.jpg",
-    "details": "Easy Park started as a response to a genuinely frustrating daily experience — being blocked in a parking space with no way to reach the other driver. The concept was simple: scan a license plate, the system finds the owner, and a push notification reaches them instantly.\n\nThe project is presented as a short 3D animated trailer created entirely in Blender. The animation walks through a real-world scenario — a driver trapped behind a blocking car, opening the app, scanning the plate, and watching the offending car move within minutes. Every scene was modeled, rigged, and animated manually.\n\nThe editing and color grading were done in DaVinci Resolve, where the final cut was assembled with motion graphics, sound design, and a cinematic grade to give the concept a polished, professional feel.\n\nBeyond the trailer, the concept was also fleshed out into a broader product vision: a city-wide parking availability map, integration with municipal parking systems, and an AI layer that predicts parking congestion by time of day and location.\n\nThis project was primarily an exercise in 3D storytelling and product concept visualization — translating an abstract app idea into something tangible and compelling through motion.",
+    "details": "Easy Park: 3D Product Visualization & Animation Pipeline\n\nProject Origin & Strategic Vision\n\nEasy Park began as a business capstone project designed to address high-density urban parking gridlock in Armenia. To effectively communicate the business model to academic evaluators, potential investors, and government stakeholders—whose cooperation would be necessary for license plate database access—the project required more than a static pitch deck. \nThe goal was to engineer a high-impact, 3D promotional trailer within a strict one-week production window, serving as an app store video showcase and proof of concept.\n\n$$0$$\n\nEnvironment Staging & Scene Optimization\n\nBuilt for high-fidelity visual output rather than real-time game performance, the complete 3D environment contained over 1,861,000 triangles. To maintain rapid production velocity without reinventing base assets, existing 3D models were integrated, restructured, and optimized for the scene.\n\n• Shader & Material Reconstruction: Imported assets were stripped of broken dependencies and rebuilt. Materials were re-linked, adjusted, and blended using custom procedural shaders inside\n\n• Blender's Shader Editor.Scene Clean-up: Extravagant vehicle details were pruned, and materials were unified to establish a consistent, realistic urban aesthetic across the entire set.\n\n$$1$$\n\n$$2$$\n\nCinematic Camera Work & Motion Tracking\n\nTo give the trailer the polished feel of a commercial advertisement, the camera animation relied heavily on dynamic lenses, depth-of-field manipulation, and motion constraints. \n\n• Dynamic Lens Selection: Focal lengths were altered continuously throughout the sequence—ranging from wide 27mm environmental framing to tight 136mm telephoto tracking shots—to direct viewer attention.\n\n• Cinematic Focus & Motion Tracking: \nCameras were parented to character joint rigs and vehicle paths, utilizing continuous depth-of-field tracking to switch focus between the driver, the vehicle, and the mobile UI in real time.\n\n$$3$$\n\n$$4$$\n\nCreative UI Compositing & Handheld Simulation\n\nRather than building complex in-engine 3D interface animations, a hybrid screen-mapping workflow was executed:\n\n1: Transparent UI Masking: The mobile device’s viewport screen was modeled with a transparent camera region inside the UI overlay.\n\n2: Video Texture Mapping: Pre-recorded footage was mapped directly as an animated material texture onto the 3D phone screen inside Blender.\n\n3: Micro-Shake Simulation: Subtle procedural noise and camera shake were keyframed into the 3D phone rig to simulate organic handheld movement, ensuring the digital UI felt naturally embedded in the physical scene.\n\n$$5$$\n\n$$6$$\n\nLighting, Cycles Rendering & Post-Production\n\nTo achieve realistic outdoor lighting, the scene combined HDRI environment maps with a directional Sun Light and supplemental 3-point studio lighting for character keying.\n\n• Render Engine: Rendered entirely in Cycles at 1080p / 24 fps to ensure physical light transport, glass refraction, and accurate vehicle paint reflections.\n\n• Editorial & Post-Processing: Final render passes were exported from Blender into external video editing software for final color grading, pacing edits, audio synchronization, and post-effects.\n\n$$7$$\n\n$$8$$",
     "link": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Video.mp4",
     "video": "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Video.mp4",
     "gallery": [
@@ -56,6 +56,17 @@
       "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img3.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img4.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Img5.jpg"
+    ],
+    "detailImages": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/2_EasyPark_Details_Img8.jpg"
     ]
   },
   {
