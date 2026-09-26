@@ -120,5 +120,29 @@
       "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img5.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img6.jpg"
     ]
-  }
+  },
+  {
+  "id": 5,
+  "title": "SFP-45 (Usp Tactical)",
+  "subtitle": "3D / Animation",
+  "description": "SFP45 (USP Tactical) is a game-ready weapon asset built in Blender and textured in Substance Painter. Designed to build instant visual interest, the showcase highlights PBR textures, UV unwrapped layout, and wireframe projection views demonstrating clean quad topology.",
+  "tags": [
+    "Substance Painter"
+  ],
+  "year": 2026,
+  "image": "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Thumbnail.jpg",
+  "gallery": [
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img1.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img2.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img3.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img4.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img5.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img6.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img7.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img8.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img9.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img10.jpg",
+    "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img11.jpg"
+  ]
+}
 ]

@@ -16,6 +16,7 @@ export type Tag =
   | 'Unity'
   | 'C#'
   | 'Blender'
+  | 'Substance Painter'
   | 'Davinci Resolve'
 
 export type Subtitle =
@@ -67,7 +68,7 @@ export interface FormState {
 
 export const ALL_TAGS: Tag[] = [
   'React', 'React Native', 'Next.js', 'JavaScript', 'TypeScript', 'HTML/CSS',
-  'Python', 'PySide6', 'C#', 'SQL', 'MongoDB', 'Unity', 'Blender',
+  'Python', 'PySide6', 'C#', 'SQL', 'MongoDB', 'Unity', 'Blender',"Substance Painter" ,
   'Davinci Resolve', 'Node.js', 'REST API',
 ]
 
