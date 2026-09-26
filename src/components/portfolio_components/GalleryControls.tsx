@@ -1,26 +1,26 @@
 import './styles/GalleryControls.css'
 
 interface Props {
-  tags: string[]
-  activeTag: string
+  subtitles: string[]
+  activeSubtitle: string
   query: string
-  onTagChange: (tag: string) => void
+  onSubtitleChange: (subtitle: string) => void
   onQueryChange: (q: string) => void
 }
 
 export default function GalleryControls({
-  tags, activeTag, query, onTagChange, onQueryChange,
+  subtitles, activeSubtitle, query, onSubtitleChange, onQueryChange,
 }: Props) {
   return (
     <div className="controls">
       <div className="filters">
-        {tags.map((tag) => (
+        {subtitles.map((subtitle) => (
           <button
-            key={tag}
-            className={`filter-btn ${activeTag === tag ? 'active' : ''}`}
-            onClick={() => onTagChange(tag)}
+            key={subtitle}
+            className={`filter-btn ${activeSubtitle === subtitle ? 'active' : ''}`}
+            onClick={() => onSubtitleChange(subtitle)}
           >
-            {tag}
+            {subtitle}
           </button>
         ))}
       </div>

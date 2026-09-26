@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import projectsData from '../data/projects.json'
-import type { Project, Tag } from '../types/index'
+import type { Project, Subtitle } from '../types/index'
 import FeaturedPanel from '../components/portfolio_components/FeaturedPanel'
 import GalleryControls from '../components/portfolio_components/GalleryControls'
 import ProjectThumb from '../components/portfolio_components/ProjectThumb'
@@ -8,7 +8,9 @@ import PortfolioSkeleton from '../components/portfolio_components/PortfolioSkele
 import './styles/PortfolioPage.css'
 
 const PROJECTS = projectsData as Project[]
-const ALL_TAGS: Tag[] = ['All' as Tag, ...Array.from(new Set(PROJECTS.flatMap((p) => p.tags))).sort()]
+// Subtitles (Web App, Mobile App, Game, ...) are a small fixed set per project,
+// unlike tags which will keep growing — much easier to scan/filter by.
+const ALL_SUBTITLES: Subtitle[] = ['All' as Subtitle, ...Array.from(new Set(PROJECTS.map((p) => p.subtitle))).sort()]
 
 // How many thumbnail images to wait on before showing the real gallery —
 // waiting on every project would delay the reveal on large portfolios for
@@ -23,7 +25,7 @@ const PAGINATE_BREAKPOINT = '(max-width: 900px)'
 const PAGE_SIZE = 6
 
 export default function PortfolioPage() {
-  const [activeTag, setActiveTag] = useState<Tag>('All' as Tag)
+  const [activeSubtitle, setActiveSubtitle] = useState<Subtitle>('All' as Subtitle)
   const [query, setQuery] = useState('')
   const [featured, setFeatured] = useState<Project>(PROJECTS[0])
   const [galleryReady, setGalleryReady] = useState(false)
@@ -70,21 +72,21 @@ export default function PortfolioPage() {
 
   const filtered = useMemo(() => {
     return PROJECTS.filter((p) => {
-      const matchesTag = activeTag === ('All' as Tag) || p.tags.includes(activeTag)
+      const matchesSubtitle = activeSubtitle === ('All' as Subtitle) || p.subtitle === activeSubtitle
       const matchesQuery =
         query === '' ||
         p.title.toLowerCase().includes(query.toLowerCase()) ||
         p.description.toLowerCase().includes(query.toLowerCase()) ||
         p.tags.some((t) => t.toLowerCase().includes(query.toLowerCase()))
-      return matchesTag && matchesQuery
+      return matchesSubtitle && matchesQuery
     })
-  }, [activeTag, query])
+  }, [activeSubtitle, query])
 
   // Reset to the first page whenever the result set or breakpoint changes,
   // so it can't get stuck showing a stale partial list after a filter change.
   useEffect(() => {
     setVisibleCount(PAGE_SIZE)
-  }, [activeTag, query, isPaginated])
+  }, [activeSubtitle, query, isPaginated])
 
   const noResults = filtered.length === 0
   // Keep last known project as background when no results
@@ -118,10 +120,10 @@ export default function PortfolioPage() {
 
       <div className="gallery-lower">
         <GalleryControls
-          tags={ALL_TAGS}
-          activeTag={activeTag}
+          subtitles={ALL_SUBTITLES}
+          activeSubtitle={activeSubtitle}
           query={query}
-          onTagChange={(tag: string) => setActiveTag(tag as Tag)}
+          onSubtitleChange={(subtitle: string) => setActiveSubtitle(subtitle as Subtitle)}
           onQueryChange={setQuery}
         />
 
