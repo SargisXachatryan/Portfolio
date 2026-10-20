@@ -24,6 +24,9 @@ const PRELOAD_COUNT = 8
 const PAGINATE_BREAKPOINT = '(max-width: 900px)'
 const PAGE_SIZE = 6
 
+// How long each project stays on screen before the carousel moves on (ms)
+const CAROUSEL_INTERVAL = 4500
+
 export default function PortfolioPage() {
   const [activeSubtitle, setActiveSubtitle] = useState<Subtitle>('All' as Subtitle)
   const [query, setQuery] = useState('')
@@ -31,6 +34,8 @@ export default function PortfolioPage() {
   const [galleryReady, setGalleryReady] = useState(false)
   const [isPaginated, setIsPaginated] = useState(false)
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  // True while a real mouse is over the thumbnails — pauses the carousel
+  const [paused, setPaused] = useState(false)
 
   useEffect(() => {
     const mq = window.matchMedia(PAGINATE_BREAKPOINT)
@@ -94,21 +99,22 @@ export default function PortfolioPage() {
   const displayed = isPaginated ? filtered.slice(0, visibleCount) : filtered
   const hasMore = isPaginated && visibleCount < filtered.length
 
-  // Touch equivalent of onMouseEnter: as a finger drags across the
-  // thumbnail row/grid, find whichever thumb is currently underneath it
-  // and preview that project — same effect as hovering with a mouse. A
-  // plain tap (no movement) never fires this, so normal Link navigation
-  // on tap is untouched.
-  const handleThumbTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    const touch = e.touches[0]
-    if (!touch) return
-    const el = document.elementFromPoint(touch.clientX, touch.clientY)
-    const thumbEl = el?.closest<HTMLElement>('[data-project-id]')
-    const id = thumbEl?.dataset.projectId
-    if (!id) return
-    const project = displayed.find((p) => String(p.id) === id)
-    if (project && project.id !== safeFeatured?.id) setFeatured(project)
-  }
+  // Auto-advancing carousel. Any change of the featured project (auto or
+  // hover) restarts the timer, so after hovering you get a full interval
+  // on that project before it moves on. Touch devices never pause or preview.
+  useEffect(() => {
+    if (!galleryReady || paused || filtered.length < 2) return
+
+    const idx = filtered.findIndex((p) => p.id === safeFeatured.id)
+    const next = filtered[(idx + 1) % filtered.length]
+
+    // Preload the next image so the crossfade never flashes empty
+    const preload = new Image()
+    preload.src = next.image
+
+    const t = setTimeout(() => setFeatured(next), CAROUSEL_INTERVAL)
+    return () => clearTimeout(t)
+  }, [galleryReady, paused, filtered, safeFeatured.id])
 
   if (!galleryReady) {
     return <PortfolioSkeleton />
@@ -127,7 +133,11 @@ export default function PortfolioPage() {
           onQueryChange={setQuery}
         />
 
-        <div className="thumbnails" onTouchMove={handleThumbTouchMove}>
+        <div
+          className="thumbnails"
+          onPointerEnter={(e) => e.pointerType === 'mouse' && setPaused(true)}
+          onPointerLeave={(e) => e.pointerType === 'mouse' && setPaused(false)}
+        >
           {!noResults && displayed.map((project) => (
             <ProjectThumb
               key={project.id}

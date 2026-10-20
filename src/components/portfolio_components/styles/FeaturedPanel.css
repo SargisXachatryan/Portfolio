@@ -14,11 +14,49 @@
 }
 
 .featured-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  animation: featuredIn 0.5s ease;
+  animation: featuredFade 1.4s cubic-bezier(0.4, 0, 0.2, 1) both;
   transition: filter 0.4s ease;
+}
+
+/* Slow, soft crossfade with a very subtle settle-in zoom */
+@keyframes featuredFade {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Previous image sits underneath, fully visible, while the new one fades in on top */
+.featured-image--outgoing {
+  animation: none;
+}
+
+/* Text fades up on every project change */
+.featured-body,
+.featured-year-badge {
+  animation: featuredText 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes featuredText {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .featured-image--dimmed {
