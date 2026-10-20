@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Project } from '../../types'
 import type { MediaItem } from '../../utils/projectMedia'
+import Icon from './Icon'
 import VideoPlayer from './VideoPlayer'
 import './styles/MediaGallery.css'
 
@@ -152,13 +153,13 @@ export default function MediaGallery({
               onClick={() => { onActiveIndexChange(Math.max(0, activeIndex - 1)); onAutoPlayVideoChange(false) }}
               disabled={activeIndex === 0}
               aria-label="Previous"
-            >‹</button>
+            ><Icon name="chevron_left" size={32} /></button>
             <button
               className="pp-nav pp-nav-next"
               onClick={() => { onActiveIndexChange(Math.min(media.length - 1, activeIndex + 1)); onAutoPlayVideoChange(false) }}
               disabled={activeIndex === media.length - 1}
               aria-label="Next"
-            >›</button>
+            ><Icon name="chevron_right" size={32} /></button>
           </>
         )}
       </div>
@@ -176,7 +177,7 @@ export default function MediaGallery({
               onClick={() => setStripPage((p) => Math.max(0, p - 1))}
               disabled={stripPage === 0}
               aria-label="Previous thumbnails"
-            >‹</button>
+            ><Icon name="chevron_left" size={26} /></button>
           )}
 
           <div className="pp-strip">
@@ -225,7 +226,7 @@ export default function MediaGallery({
               onClick={() => setStripPage((p) => Math.min(totalStripPages - 1, p + 1))}
               disabled={stripPage >= totalStripPages - 1}
               aria-label="Next thumbnails"
-            >›</button>
+            ><Icon name="chevron_right" size={26} /></button>
           )}
         </div>
       )}

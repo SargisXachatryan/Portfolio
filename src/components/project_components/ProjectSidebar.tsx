@@ -1,4 +1,6 @@
 import type { Project } from '../../types'
+import Icon from './Icon'
+import RichText from './RichText'
 import './styles/ProjectSidebar.css'
 
 interface ProjectSidebarProps {
@@ -22,9 +24,9 @@ export default function ProjectSidebar({ project, activeIndex, mediaCount }: Pro
         </div>
       </div>
 
-      <p className="pp-sidebar-desc">
-        {project.description.split('\n\n')[0]}
-      </p>
+      <div className="pp-sidebar-desc">
+        <RichText keyPrefix="sb" text={project.description.split('\n\n')[0]} />
+      </div>
 
       {project.link && (
         <a
@@ -33,7 +35,7 @@ export default function ProjectSidebar({ project, activeIndex, mediaCount }: Pro
           rel="noopener noreferrer"
           className="pp-cta"
         >
-          View project <span className="pp-cta-arrow">→</span>
+          View project <Icon name="arrow_outward" size={18} className="pp-cta-arrow" />
         </a>
       )}
 

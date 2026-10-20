@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Icon from './Icon'
 import './styles/Lightbox.css'
 
 const ZOOM_MIN = 0.5
@@ -105,7 +106,7 @@ export default function Lightbox({ src, onClose }: LightboxProps) {
         className="pp-lightbox-close"
         onClick={(e) => { e.stopPropagation(); onClose() }}
         aria-label="Close"
-      >✕</button>
+      ><Icon name="close" size={22} /></button>
     </div>
   )
 }

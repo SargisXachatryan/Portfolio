@@ -6,7 +6,7 @@
 .pp-desc-section {
   border-top: 1px solid var(--border);
   padding-top: 48px;
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .pp-desc-heading {
@@ -33,19 +33,19 @@
 .pp-desc-body {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .pp-desc-body p {
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.85;
   color: var(--text);
 }
 
 /* Images embedded in the write-up via $$index$$ — own block, never
    crowds the surrounding text (the gap on .pp-desc-body already separates it). */
 .pp-detail-image {
-  margin: 6px 0;
+  margin: 10px 0;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -58,5 +58,3 @@
   max-height: 460px;
   object-fit: cover;
 }
-
-

@@ -69,6 +69,9 @@
 }
 
 .pp-sidebar-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   font-size: 14px;
   line-height: 1.7;
   color: var(--text);
@@ -94,6 +97,8 @@
   align-self: flex-start;
   margin-top: 4px;
 }
+
+.pp-cta .pp-icon { margin-right: -4px; }
 
 .pp-cta:hover {
   background: var(--accent);

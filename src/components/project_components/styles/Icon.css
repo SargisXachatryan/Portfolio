@@ -1,0 +1,11 @@
+/* Linked Google Material Symbol, drawn as a mask so it follows `color`. */
+.pp-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--icon-size, 1em);
+  height: var(--icon-size, 1em);
+  background-color: currentColor;
+  -webkit-mask: var(--icon-url) center / contain no-repeat;
+  mask: var(--icon-url) center / contain no-repeat;
+  pointer-events: none;
+}
