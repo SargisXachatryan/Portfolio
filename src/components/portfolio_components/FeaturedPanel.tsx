@@ -19,7 +19,7 @@ export default function FeaturedPanel({ project, noResults }: Props) {
     shownRef.current = project
     if (last && last.id !== project.id) {
       setOutgoing(last)
-      const t = setTimeout(() => setOutgoing(null), 1200)
+      const t = setTimeout(() => setOutgoing(null), 1500)
       return () => clearTimeout(t)
     }
   }, [project?.id]) // eslint-disable-line react-hooks/exhaustive-deps
