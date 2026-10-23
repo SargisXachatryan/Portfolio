@@ -81,14 +81,18 @@
     "image": "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Thumbnail.jpg",
     "details": "The model was created in Blender and consists of 40,991 triangles. It includes a fully rigged bone system designed to simulate realistic firearm mechanics, allowing for full animation of components such as the trigger and other movable parts. The asset was built with clean topology and UV mapping to support different rendering workflows, including textured and non-textured (solid) visual modes. It is optimized for animation, with a fully controllable rig that allows realistic motion simulation of firearm operation within 3D environments.",
     "gallery": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img6.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img7.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img8.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_8.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_9.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_10.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_11.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_12.jpg"
     ]
   },
   {
