@@ -71,32 +71,6 @@
   },
   {
     "id": 3,
-    "title": "HK416",
-    "subtitle": "3D / Animation",
-    "description": "A detailed 3D model of a modern assault rifle inspired by the HK416 platform, created as a high-fidelity digital asset for visualization and animation purposes. It includes multiple visualization variants such as solid, textured, UV-mapped, and topology-focused versions, making it suitable for both rendering and study of structure and form.",
-    "tags": [
-      "Blender"
-    ],
-    "year": 2026,
-    "image": "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Thumbnail.jpg",
-    "details": "The model was created in Blender and consists of 40,991 triangles. It includes a fully rigged bone system designed to simulate realistic firearm mechanics, allowing for full animation of components such as the trigger and other movable parts. The asset was built with clean topology and UV mapping to support different rendering workflows, including textured and non-textured (solid) visual modes. It is optimized for animation, with a fully controllable rig that allows realistic motion simulation of firearm operation within 3D environments.",
-    "gallery": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_6.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_7.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_8.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_9.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_10.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_11.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/3_HK416_Img_12.jpg"
-    ]
-  },
-  {
-    "id": 4,
     "title": "Thomas",
     "subtitle": "3D / Animation",
     "description": "This project is a fully handcrafted 3D character asset produced across two distinct outfit and styling variants. Built from the ground up—including custom hair, apparel, and canvas high-top sneakers—the character features complete custom UV mapping, hand-authored PBR textures, and a full body rig. The project highlights clean mesh construction, detailed material creation, and production-ready asset optimization for games or cinematic renders.",
@@ -104,25 +78,63 @@
       "Blender"
     ],
     "year": 2025,
-    "image": "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Thumbnail.jpg",
     "details": "### Thomas: High-Detail 3D Character & Game-Ready Asset Pipeline\n\n### Anatomical Sculpting & Topology Preservation\n\nThe character foundation was built leveraging the MPFB framework, followed by custom sculpting passes in Blender to adjust facial proportions, jaw structure, eye placement, and hand anatomy for a 27–30-year-old male aesthetic.\n\nRather than destroying the base mesh through dynamic topology remeshing, vertex positions were adjusted directly in Sculpt Mode. This preserved the production-ready edge loops—maintaining clean, circular loops around the eyes, mouth, shoulders, and joints critical for real-time deformation.\n\n$$0$$\n\n$$1$$\n\n### Garment Construction & Custom Footwear Modeling\n\nGarment geometry was engineered using a combination of mesh extraction and hand-modeling:\n\n- **Trousers, T-Shirt, & Hoodie Body:** Extruded directly from the underlying body topology. Reusing the base edge flow ensured proper garment alignment and prevented clipping, while the hood element was built by hand to achieve proper spatial volume.\n\n- **Handcrafted High-Top Sneakers:** Built from scratch starting with the sole, extruding upward to construct the thick rubber rand, heel cup, and canvas upper. The right and left shoes feature asymmetrical anatomical shaping, smooth merged seams, and separate lace geometry.\n\n$$2$$\n\n$$3$$\n\n### Hand-Placed Hair Cards & PBR Material Pipeline\n\nTo deliver real-time hair without the performance cost of particle systems, individual hair cards were placed by hand across the scalp, eyebrows, and beard.\n\n- **Texture Authoring:** Initial procedural node materials were authored in Blender, then converted into game-ready PBR texture maps (Base Color, Normal, Roughness, Specular, and Alpha) utilizing the Ravage add-on.\n\n- **Optimization:** Subsurface scattering was bypassed in favor of baked high-poly details in the Normal map, keeping shader execution lightweight for game engines.\n\n$$4$$\n\n$$5$$\n\n### Skeletal Rigging, Weight Painting, & Studio Renders\n\nThe asset was fitted with a standard skeletal armature to ensure seamless movement across animation pipelines.\n\n- **Weight Map Painting:** Rig weights across the hoodie and canvas sneakers were manually repainted to fix mesh floating and garment clipping issues common with default auto-weighting.\n\n- **Studio Lighting Setup:** Renders were executed inside a light-isolated black enclosure using a controlled 3-point studio lighting setup (Key, Fill, and Rim lights) to highlight form, material roughness, and specular highlights without background light bounce.\n\n$$6$$",
     "video": "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Video.mp4",
     "gallery": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Img6.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Img_6.jpg"
     ],
     "detailImages": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img0.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/4_Thomas_Details_Img6.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/3_Thomas_Details_Img_6.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "HK416",
+    "subtitle": "3D / Animation",
+    "description": "A high-fidelity, game-ready tactical rifle asset inspired by modern firearm platforms (H-416R). Engineered in Blender and Substance Painter with quad-only topology, rigged bone mechanics for animation, 4K HDRP-ready PBR material sets, and modular picatinny mounting standards.",
+    "tags": [
+      "Blender",
+      "Substance Painter"
+    ],
+    "year": 2026,
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Thumbnail.jpg",
+    "details": "The H-416R is a high-fidelity, fully rigged game-ready tactical rifle asset engineered in Blender and textured in Substance Painter. Built with a quad-only topology foundation, rigged internal/external mechanical armature, and high-density 4K PBR textures, this asset is optimized for dynamic first-person animation and real-time engine deployment in Unity.\n\n$$0$$\n\n### Geometric Specs & Mesh Topology\n\nUnlike traditional subdivision workflows, the H-416R was built using direct reference outlining—blocking out primary silhouettes with sharp geometric bounds before progressively subdividing into production-ready topology. The final mesh is strictly quad-dominant with zero n-gons or pre-triangulated faces, ensuring clean automatic triangulation upon engine import:\n\n- **Faces:** 15,563 (100% Quads)\n- **Triangles:** 31,578 \n- **Vertices:** 16,655\n- **Standard Magazine:** ~3,200 Triangles\n- **Extended Dual Magazine:** ~4,200 Triangles\n\nTo balance visual fidelity against performance, high-frequency structural details—including silencer knurling, magazine grip ribbing, buttstock pad patterns, and receiver texturing—were offloaded to precision height and normal maps rather than inflating geometric density.\n\n\n\n$$1$$\n\n### Rigging & Mechanical Modular System\n\nThe asset is built with a complete custom bone armature system, enabling seamless integration into first-person shooter (FPS) character animation blueprints. All dynamic elements—including the trigger assembly, charging handle, ejection port cover, fire selector, and bolt carrier group—are individually rigged.\n\n$$2$$\n\nFurthermore, the handguard and top rail system adhere to standardized picatinny geometry, allowing direct cross-compatibility with modular optics, tactical flashlights, and laser mounts built across the same asset ecosystem.\n\n\n\n$$3$$\n\n### Precision Picatinny Rail & Modular Construction\n\nDeveloping the multi-sided quad-based picatinny rail system required precise edge-loop cuts and alternate checker-selection offsets to maintain uniform tooth dimensions across the receiver and handguard. Mirror modifiers were heavily utilized during initial shaping, ensuring absolute structural symmetry across mounting points.\n\n\n\n$$4$$\n\n### UV Unwrapping & Texel Optimization\n\nUV unwrapping was executed in Blender using specialized layout utilities [MIO3UV](https://extensions.blender.org/add-ons/mio3-uv/) to eliminate organic projection warping and force strict grid alignment on rectangular island shapes. This approach prevented texture distortion along linear components like the barrel, rail tracks, and magazine bodies while maximizing overall texel density.\n\n\n\n$$5$$\n\n### High-Definition PBR Material & Texture Pipeline\n\nTexturing was authored in Substance Painter using 4K PBR maps (Base Color, Metallic, Roughness, Normal, Height, AO, and Emissive). Designed primarily for Unity's High Definition Render Pipeline (HDRP), texture resolutions can be dynamically downscaled in-engine to match target hardware tiers without requiring source modifications.\n\n\n\n$$6$$\n\n### Custom Pipeline Tooling: Texture Atlas Consolidation\n\nWorking across six distinct material slots originally created 42 individual texture channels (6 materials × 7 maps). This setup introduced excessive draw calls and texture streaming overhead during engine import.\n\nTo solve this without manual compositing, I utilized my custom texture consolidation software to programmatically pack and crop all 42 texture channels into a single, seamless 7-map PBR material set.\n\nLearn more about how this custom texture automation tool was built: [View Texture Consolidation Tool Project](link:texture-atlas-tool-id).\n\n\n\n$$7$$\n\n### Iteration, Topology Refinement & Production Results\n\nAs the foundational rifle model in this asset pipeline, the H-416R underwent extensive structural rebuilds over multiple development passes. Early iterations were stripped back and restructured to eliminate non-standard quad connections, resulting in clean edge flow, smooth specular highlight transitions, and an optimized production asset ready for active game production.\n\n\n\n$$8$$",
+    "gallery": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_8.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_9.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_10.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_11.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Img_12.jpg"
+    ],
+    "detailImages": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/4_H-416R_Details_Img_8.jpg"
     ]
   },
   {
@@ -135,30 +147,30 @@
       "Blender"
     ],
     "year": 2026,
-    "image": "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Thumbnail.jpg",
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Thumbnail.jpg",
     "details": "The USP Tactical (K-45P) project was structured around building an efficient, game-ready asset that balances high visual fidelity with clean technical execution. This technical breakdown covers the topology, PBR layer composition, and custom pipeline workflows used to develop the weapon in Blender and Substance Painter.\n\n$$0$$\n\n### Direct Modeling & Topology Optimization\n\nRather than relying on a traditional high-to-low blockout pass, the mesh was built through a direct reference-shaping workflow—starting from primary rough forms and progressively subdividing into production topology. The final mesh is optimized for real-time engine constraints (supporting both first-person and third-person camera views):\n\n- **Faces:** ~4,000\n- **Triangles:** 7,415\n- **Vertices:** 8,382\n\nHeavy reliance on symmetry modifiers streamlined early geometric density, while quad redirection was manually applied around complex stress areas—such as slide serrations, the trigger guard, and the ejection port—to maintain smooth shading and clean edge highlights.\n\n\n\n$$1$$\n\n### UV Unwrapping & Texel Density\n\nTo ensure maximum texel density on primary player-facing surfaces while minimizing visible seams, UV islands were logically grouped across the primary frame, attachments, optical glass, and ammunition. Seams were aligned along natural geometric breaks, hard-surface bevels, and undercarriage tracks.\n\n\n\n$$2$$\n\n### Physical Material Definition & PBR Layering\n\nTexturing was executed in Substance Painter, using 4K map sets for the firearm and attachments, along with dedicated 512p maps for the ammunition. The weapon is divided into distinct physical material definitions:\n\n1. **Textured Polymer:** Applied to the frame and grip, featuring micro-stippling grain, organic roughness variations, and subtle surface wear.\n2. **Anodized Aluminum:** Used for the slide and mechanical assemblies, capturing realistic metallic highlights and light scattering.\n3. **Matte Darkened Aluminum:** Applied to tactical attachments, featuring heavier edge wear, scuffs, and distinct roughness variations.\n4. **Glass & Emissive Sights:** Clear refractive glass shaders paired with green emissive maps for the tactical sights, flashlight, and laser module.\n\n\n\n$$3$$\n\n### Material Iteration & Surface Detail Tuning\n\nAchieving photorealistic response on the anodized aluminum required significant iteration. Initial shaders appeared flat, leading to a complete rebuild of the material stack over two weeks. Height micro-stippling, ambient occlusion overlays, and custom roughness channels were repeatedly fine-tuned to match real-world physical behavior.\n\n\n\n$$4$$\n\n### Custom Pipeline Tooling: Texture Atlas & Draw Call Consolidation\n\nSplitting the firearm across four distinct materials initially produced 28 individual texture maps (Base Color, Roughness, Metallic, Normal, Height, Opacity, AO, and Emissive). Importing these into game engines created excessive draw calls and material management overhead.\n\nTo automate texture packing without manually combining maps in photo editing software, I designed and built a dedicated custom utility application. This software programmatically packs and consolidates all 28 individual texture maps into a single, optimized 7-map PBR material set.\n\nLearn more about how this custom texture automation tool was built here: [View Texture Consolidation Tool Project](link:7).\n\n\n\n$$5$$\n\n### Full Mesh Wireframe Analysis\n\nAnalyzing the final wireframe overlay demonstrates the distribution of support loops, edge flow, and quad continuity across both the main weapon frame and modular attachments.\n\n\n\n$$6$$\n\n### PBR Texture Channel Breakdown\n\nAn isolated view of the packed PBR channels demonstrates how individual roughness masks, metallic parameters, normal maps, and height details work together to create realistic surface response under dynamic lighting.\n\n\n\n$$7$$",
     "gallery": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img_1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img_2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img6.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img7.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img8.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img9.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img10.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Img11.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_8.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_9.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_10.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Img_11.jpg"
     ],
     "detailImages": [
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_0.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_1.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_2.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_3.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_4.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_5.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_6.jpg",
-      "https://sargisxachatryan.github.io/Portfolio/resources/5_Usp_Tactical_Details_Img_7.jpg"
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_7.jpg"
     ]
   }
 ]
