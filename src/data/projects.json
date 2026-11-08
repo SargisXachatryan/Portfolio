@@ -106,6 +106,7 @@
     "description": "A high-fidelity, game-ready tactical rifle asset inspired by modern firearm platforms (H-416R). Engineered in Blender and Substance Painter with quad-only topology, rigged bone mechanics for animation, 4K HDRP-ready PBR material sets, and modular picatinny mounting standards.",
     "tags": [
       "Blender",
+      "Unity",
       "Substance Painter"
     ],
     "year": 2026,
@@ -144,6 +145,7 @@
     "description": "K-45P (USP Tactical) is a game-ready weapon asset built in Blender and textured in Substance Painter. Designed to build instant visual interest, the showcase highlights PBR textures, UV unwrapped layout, and wireframe projection views demonstrating clean quad topology.",
     "tags": [
       "Substance Painter",
+      "Unity",
       "Blender"
     ],
     "year": 2026,
@@ -171,6 +173,49 @@
       "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_5.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_6.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/5_K-45P_Details_Img_7.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "FIGA 712",
+    "subtitle": "3D / Animation",
+    "description": "The FIGA 712 is a fictional modern tactical rifle asset inspired by the AK-74M and AK-12 platforms, engineered in Blender and Substance Painter with a complete mechanical bone rig, 4K PBR material set, and modular picatinny mounting standards.",
+    "tags": [
+      "Blender",
+      "Unity",
+      "Substance Painter"
+    ],
+    "year": 2026,
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Thumbnail.jpg",
+    "details": "The FIGA 712 is a game-ready tactical rifle asset built as a fictional evolution of modern service rifle platforms. Developed with a quad-only topology foundation, a custom internal/external bone armature, and a single consolidated 4K PBR material set, this asset is optimized for real-time engine deployment.\n\n$$0$$\n\n### Geometric Specs & Mesh Topology\n\nBuilt as the third firearm in this asset creation series, the FIGA 712 followed a streamlined block-out workflow. Initial silhouettes were established directly from photographic references, transitioning from primary geometric bounds into refined structural volumes without relying on destructive subdivision workflows.\n\n**Vertices:** 17,581\n- **Edges:** 33,915\n- **Triangles:** 32,842\n- **Included Magazines:** Standard and extended magazine variants\n\n\n\n$$1$$\n\n### Rigging & Folding Buttstock Mechanics\n\nUnlike static asset models, the FIGA 712 features a fully integrated bone rig authored directly in Blender. All core mechanical moving parts are individually rigged to support dynamic gameplay animation, including:\n\n- **Trigger assembly and safety selector**\n- **Charging handle and bolt carrier group**\n- **Ejection port cover and magazine release**\n- **Modular folding buttstock mechanism**\n\nThe inclusion of the folding buttstock—inspired by the AK-74M (\"Modified\") designation—allows the rear stock assembly to pivot flush against the main frame, creating a compact profile suited for tight spaces and close-quarters tactical animation scenarios.\n\n\n\n$$2$$\n\n### Picatinny Rail Integration & Modular Scopes\n\nThe weapon features standardized top and side picatinny rails designed to accept modular attachment systems. The asset supports interchangeable optical attachments linked directly from companion project files. Explore the compatible optics framework here: [View Compatible Scopes Project](link:7).\n\n\n\n$$3$$\n\n### UV Unwrapping & Seam Optimization\n\nUV unwrapping was executed in Blender utilizing specialized layout utilities [MIO3UV](https://extensions.blender.org/add-ons/mio3-uv/) to eliminate organic projection warping[cite: 1, 2]. Particular attention was paid to hiding texture seams along high-contrast geometric intersections and natural panel breaks, ensuring clean specular highlight continuity across flat and cylindrical receiver surfaces.\n\n\n\n$$4$$\n\n### High-Definition PBR Material & Texture Pipeline\n\nTexturing was authored in Substance Painter across four distinct material slots, generating a comprehensive 4K PBR channel set including Base Color, Metallic, Roughness, Normal, Ambient Occlusion, Emissive, Height, and Opacity.\n\n\n\n$$5$$\n\n### Custom Pipeline Tooling: Texture Atlas Consolidation\n\nManaging multiple material slots generated an excessive number of individual texture files, introducing unnecessary draw calls and memory overhead for a game-ready asset. To resolve this, I utilized my custom texture combination software to programmatically crop, pack, and merge all channel maps from the separate material slots into a single unified texture atlas set.\n\nLearn more about how this optimization tool was built: [View Texture Consolidation Tool Project](link:8).\n\n\n\n$$6$$\n\n### Production Results & Real-Time Readiness\n\nThrough iterative prototyping, precise reference scaling, and automated texture optimization, the FIGA 712 delivers a balanced compromise between high-fidelity visual presentation and optimized real-time engine performance.\n\n\n\n$$7$$",
+    "gallery": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_8.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_9.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_10.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_11.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_12.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_13.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_14.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_15.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_16.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Img_17.jpg"
+    ],
+    "detailImages": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_7.jpg"
     ]
   }
 ]
