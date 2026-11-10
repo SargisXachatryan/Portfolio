@@ -220,5 +220,51 @@
       "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_6.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/6_Figa712_Details_Img_7.jpg"
     ]
+  },
+  {
+    "id": 7,
+    "title": "Red Dot | Holographic | Prism",
+    "subtitle": "3D / Animation",
+    "description": "The Red Dot Holographic Prism optic suite features three distinct game-ready tactical scope models engineered in Blender and Substance Painter, sharing a unified 4K PBR material set designed for seamless integration onto modern rifle platforms.",
+    "tags": [
+      "Blender",
+      "Substance Painter",
+      "Unity"
+    ],
+    "year": 2026,
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Thumbnail.jpg",
+    "details": "The Red Dot, Holographic, and Prism attachment package was engineered as a modular optics framework designed to mount onto rifle platforms such as the [FIGA 712](link:6) and [H-416R](link:4) tactical rifles. Designed around a shared aesthetic and optimized workflow, all three optic variants utilize a single consolidated 4K PBR material set for real-time engine performance.\n\n$$0$$\n\n### Geometric Specs & Mesh Topology\n\nTo maximize efficiency across attachment slots, all three scope models were constructed using standardized sizing references and copy-paste workflows across recurring housing elements to maintain strict dimensional consistency.\n\n* **Vertices:** 6,960 (Combined Suite)\n* **Edges:** 13,158\n* **Triangles:** 13,565\n* **Faces:** 6,209\n* **Included Models:** Red Dot Sight, Holographic Sight, and Prism Optic\n\n\n\n$$1$$\n\n### Internal Lens Geometry & Glass Layering\n\nEach optic variant incorporates custom internal lens geometry tailored to its unique optical archetype:\n\n* **Red Dot Sight:** Configured with a single planar lens mesh bounded by the optic frame for minimal performance overhead.\n* **Holographic Sight:** Constructed with a multi-layer glass assembly to reflect complex holographic reticle structures.\n* **Prism Optic:** Built with a specialized multi-surface optical stack—including front/rear outer lenses, an internal reticle plane, and dedicated depth surfaces designed to interface cleanly with game engine shaders.\n\n\n\n$$2$$\n\n### UV Unwrapping & Grid Alignment\n\nUV unwrapping was executed across all three models inside Blender using [MIO3UV](https://extensions.blender.org/add-ons/mio3-uv/)[cite: 1, 2]. By packing all three scope variants onto a single unified UV sheet, rectilinear islands were strictly grid-aligned to maximize texel density and eliminate seam visibility along cylindrical sight bodies.\n\n\n\n$$3$$\n\n### High-Definition PBR Material Pipeline\n\nTexturing was authored in Substance Painter across six distinct material slots for the scope suite, generating a comprehensive 4K PBR channel set covering Base Color, Metallic, Roughness, Normal, Ambient Occlusion, Emissive, and Height.\n\n\n\n$$4$$\n\n### Custom Pipeline Tooling: Texture Atlas Consolidation\n\nManaging six separate material slots generated excessive texture files and draw-call overhead for small weapon attachments. To solve this, I ran all exported texture channels through my custom texture consolidation software, programmatically packing and merging all material slots into a single unified 7-map 4K PBR texture set.\n\nLearn more about how this optimization tool was built: [View Texture Consolidation Tool Project](link:8).\n\n\n\n$$5$$\n\n### Shader Setup & Material Integration\n\nThe consolidated texture maps were fed into the Blender material nodes, establishing clean texture channel connections across all three scope housings under a unified shader network.\n\n\n\n$$6$$\n\n### Comparative Proportions & Suite Scaling\n\nReviewing the side-by-side scale of the Red Dot, Holographic, and Prism variants ensures that silhouette profiles remain proportional when mounted on top of the rifle receivers.\n\n\n\n$$7$$\n\n### Production Results & Final Optimization\n\nThrough systematic mesh replication, precise UV packing, and automated texture consolidation, the Red Dot Holographic Prism suite delivers a high-performance modular accessory pack ready for active game integration.\n\n\n\n$$8$$",
+    "gallery": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_8.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_9.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_10.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_11.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_12.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_13.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_14.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_15.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_16.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_17.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_18.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Img_19.jpg"
+    ],
+    "detailImages": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_6.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_7.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_8.jpg"
+    ]
   }
 ]
