@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Easy Chat",
     "subtitle": "Full Stack Web App",
-    "description": "Easy Chat is a browser-based web messenger engineered for seamless, real-time communication without requiring heavy app downloads. The application features direct user-to-user messaging, inline media sharing, dynamic message controls (edit, replace, or delete), and full profile management. Built directly into the browser, it highlights clean front-end architecture, state management, and responsive UI design—delivering a fast, intuitive chat platform accessible on any device.",
+    "description": "Easy Chat is a browser-based web messenger built for real-time communication, featuring direct messaging, inline media sharing, message controls, and profile management.",
     "tags": [
       "React",
       "JavaScript",
@@ -40,7 +40,7 @@
     "id": 2,
     "title": "Easy Park",
     "subtitle": "3D / Animation",
-    "description": "Easy Park is a 3D animated concept trailer for a mobile app designed to resolve urban parking gridlock. Built around a license plate scanning system that lets drivers instantly notify owners of blocked vehicles, the project was modeled, staged, and rendered in Blender to demonstrate motion design, camera composition, and app store promotional visualization.",
+    "description": "Easy Park is a 3D animated concept trailer for a mobile app designed to resolve urban parking gridlock through a license plate scanning system that lets drivers instantly notify owners of blocked vehicles, showcasing full 3D modeling, animation, and promotional visualization in Blender.",
     "tags": [
       "Blender",
       "Davinci Resolve"
