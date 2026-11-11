@@ -9,6 +9,7 @@ export type Tag =
   | 'TypeScript'
   | 'Python'
   | 'PySide6'
+  | 'Tkinter'
   | 'SQL'
   | 'MongoDB'
   | 'Node.js'
@@ -68,7 +69,7 @@ export interface FormState {
 
 export const ALL_TAGS: Tag[] = [
   'React', 'React Native', 'Next.js', 'JavaScript', 'TypeScript', 'HTML/CSS',
-  'Python', 'PySide6', 'C#', 'SQL', 'MongoDB', 'Unity', 'Blender',"Substance Painter" ,
+  'Python', 'PySide6', 'Tkinter', 'C#', 'SQL', 'MongoDB', 'Unity', 'Blender', "Substance Painter",
   'Davinci Resolve', 'Node.js', 'REST API',
 ]
 

@@ -266,5 +266,35 @@
       "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_7.jpg",
       "https://sargisxachatryan.github.io/Portfolio/resources/7_Scopes_Details_Img_8.jpg"
     ]
+  },
+  {
+    "id": 8,
+    "title": "Texture Combiner",
+    "subtitle": "Tool / Script",
+    "description": "Texture Combiner is a custom Python desktop automation utility built with a Tkinter live visualization interface to batch-process and merge exported Substance Painter texture sets into a single, highly optimized PBR atlas.",
+    "tags": [
+      "Python",
+      "Tkinter"
+    ],
+    "year": 2026,
+    "image": "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Thumbnail.jpg",
+    "details": "### The Optimization Bottleneck\n\nWhen preparing complex 3D assets, models are routinely separated into distinct parts based on individual material slots in Substance Painter. Managing a single high-fidelity asset often results in four to seven separate material slots—generating up to 49 individual texture maps. This massive file overhead creates severe performance penalties and inefficiencies.\n\n$$0$$\n\n### The Photoshop Precursor & Automation Idea\n\nThe core concept for Texture Combiner originated from a manual Photoshop workflow. Previously, textures were combined by importing map sets into folders, manually generating outer shell selections from black-and-white mask layers, clearing background regions, and exporting combined layers one by one—a tedious process taking upwards of 30 minutes for just five materials.\n\n$$1$$\n\n### The Metallic Stencil Architecture\n\nTo automate this pipeline, the script uses the **Metallic** map as the master silhouette stencil. Because Metallic maps provide the cleanest black-and-white structural separation, the script evaluates pixel thresholds to isolate object geometry, cutting out and stacking channel maps (BaseColor, Roughness, Normal, Metallic, AO, Height, and Alpha) into a unified 7-map PBR texture set.\n\n- **Input Handling:** Automatically scans input folders for PNG, TGA, and TIFF files, grouping UDIM tiles and material channels dynamically.\n- **Interface & Execution:** Built as a standalone Python application utilizing `tkinter` for the GUI, paired with an interactive live visualizer script (`texture_visualize.py`) that renders real-time cutouts, masks, and atlas packing states.\n- **Vibe-Coding Approach:** Rapidly developed using AI-assisted coding workflows (`Claude AI`) to streamline production without unnecessary technical friction.\n\n$$2$$\n\n### Code Structure & Batch Processing Pipeline\n\nThe Python codebase is structured to cleanly separate file ingestion, mask generation logic, and canvas assembly into modular components. It parses naming conventions and map aliases before processing high-resolution textures efficiently.\n\n$$3$$\n\n### Tkinter Live Visualization GUI\n\nTo monitor the merging process in real-time, the visualizer script hooks directly into the pipeline functions, displaying source maps, cutout masks, cut-out layers, and the growing atlas simultaneously in a dedicated desktop window.\n\n$$4$$\n\n### Practical Pipeline Workflow & Execution\n\nRunning as a standalone batch script, the tool launches directly through a command prompt window, streamlining texture consolidation from a 30-minute manual chore into a fully automated execution process.\n\n$$5$$",
+    "video": "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Video.mp4",
+    "gallery": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_5.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Img_6.jpg"
+    ],
+    "detailImages": [
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_0.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_1.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_2.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_3.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_4.jpg",
+      "https://sargisxachatryan.github.io/Portfolio/resources/8_Image_Combiner_Details_Img_5.jpg"
+    ]
   }
 ]
